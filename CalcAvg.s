@@ -1,4 +1,4 @@
-#CalcAvg program
+#CalcAvg program to calculate the average of a list of integers 
 
 .text
 .global _start
@@ -18,7 +18,7 @@ _start:
 	movia r3, N
 	ldw r3, 0(r3)
 	
-	call CountGTorEQAvg
+	call CountGTorEQAvg		#count numbers greater than or equal to the average
 	movia r5, N_GT_OR_EQ
 	stw r2, 0(r5)
 	sub r2, r3, r2
@@ -63,7 +63,7 @@ CountGTorEQAvg:
 	count_loop:
 		if:
 		ldw r5, 0(r2)		#read list[i]
-		blt r5, r4, end_if	#its less than avg
+		blt r5, r4, end_if	#its less than avg so don't increment count
 		then:
 		addi r6,r6,1
 		end_if:
@@ -80,7 +80,7 @@ CountGTorEQAvg:
 	addi sp, sp, 16
 
 	ret
-DiffFromAvg:
+DiffFromAvg:			#function to calc difference between avg and a number. Not called in this program
 	subi sp, sp, 12
 	stw r2, 8(sp)		#orig lst pointer
 	stw r3, 4(sp)		#orig N
