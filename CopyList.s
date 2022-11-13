@@ -1,4 +1,5 @@
-#CopyList Subroutine
+#CopyList Subroutine to copy integers from one list to another. A main function and values would be assigned for a full program.
+#Condition must be met to be moved to new list - in this case only positive numbers are copied over.
 
 CopyList:
 	subi sp, sp, 16
