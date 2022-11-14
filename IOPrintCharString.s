@@ -1,3 +1,7 @@
+#Subroutines for all character output
+#Includes subroutine to printChar, printString, printHexDigit (0-F), printHexByte (two HEX digits), printDec99 (print decimal from 0-99 as a char)
+
+
 .text
 .global _start
 .org 0
@@ -5,7 +9,7 @@
 .equ JTAG_UART_BASE, 0x10001000		#address of first JTAG UART register
 .equ DATA_OFFSET, 0			#offset of JTAG UART data register
 .equ STATUS_OFFSET, 4			#offset of JTAG UART status register
-.equ WSPACE_MASK, 0xFFFF		#used in AND operation to check status
+.equ WSPACE_MASK, 0xFFFF (		#used in AND operation to check status
 
 _start:
 movia sp, 0x7FFFFC
