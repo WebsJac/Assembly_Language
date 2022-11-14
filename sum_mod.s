@@ -1,3 +1,6 @@
+#Assembly code to iterate through a list and cumatively add elements
+#Has been adapted to also count the number of negative numbers in the list
+	
 	.org 0 
 	.global _start
 _start:
